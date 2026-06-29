@@ -1,21 +1,17 @@
-# Specification: [Your App Idea Name]
+# Specification: Cody's PC Builds
 
-App description: [Write a one or two sentences describing what your app does and who it’s for.]
+## App description
+Cody's PC Builds is a simple web app that helps beginners explore beginner-friendly PC build ideas for gaming, school work, and content creation. The app makes it easy to compare build options and see what each one is best for before spending money.
 
 ## Style and Theme
+The app should feel modern, bold, and tech-focused. It should use a cool dark-blue color palette with bright blue accents, simple cards, and clear buttons. The overall mood should feel helpful, energetic, and easy to read for a first-time builder.
 
-[Describe the look and feel of your app.] 
-
-Overall mood:
-Examples: fun and playful, calm and professional, bold and energetic, etc.
-
-Use the *style-guide.html* for details on styling -- fonts, colors, and layout.
+Use the style-guide.html file for details on styling, including colors, fonts, and layout.
 
 ## User Scenarios
 
 ### Story 1 (most important)
-
-[Write 1-2 sentences. Who is using the app, what do they want to do, and what do they see when it works? Write it like you are describing it to a friend.]
+A student who wants a budget gaming PC opens the app, browses a few build ideas, and picks one that feels like a good match. When they open a build card, they can quickly see what the build is for and why it might work for them.
 
 ---
 
@@ -56,8 +52,6 @@ Describe what success looks like in simple, observable terms.
 1. A new person can open the app and reach the collection page in one click from Home.
 2. A new person can open one item detail page from the collection without help.
 3. If the data cannot load, the app shows a clear message instead of a blank page.
-
-
 
 ### Starter defaults
 

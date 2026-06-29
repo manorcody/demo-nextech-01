@@ -15,7 +15,7 @@ export default {
   },
   template: /* html */ `
     <section class="container py-4">
-      <router-link to="/items" class="btn btn-link ps-0 mb-3">← Back to collection</router-link>
+      <router-link to="/items" class="btn btn-link ps-0 mb-3">← Back to build ideas</router-link>
 
       <div v-if="itemsStore.isLoading" class="alert alert-secondary" role="status">
         Loading item details...
@@ -48,8 +48,8 @@ export default {
           </div>
 
           <p class="lead mb-3">{{ selectedItem.description || 'No description available.' }}</p>
-          <p class="mb-0"><strong>Location:</strong> {{ selectedItem.location || 'N/A' }}</p>
-          <p class="text-muted mt-2 mb-0"><strong>Item ID:</strong> {{ selectedItem.id }}</p>
+          <p class="mb-0"><strong>Best for:</strong> {{ selectedItem.location || 'N/A' }}</p>
+          <p class="text-muted mt-2 mb-0"><strong>Build ID:</strong> {{ selectedItem.id }}</p>
         </div>
       </article>
     </section>

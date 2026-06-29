@@ -1,3 +1,22 @@
+body {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2f0ff 100%);
+}
+
+.navbar {
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+}
+
+.hero-section {
+  background: linear-gradient(135deg, #0f172a 0%, #2563eb 100%);
+  color: #ffffff;
+}
+
+.hero-section .btn-primary {
+  background-color: #38bdf8;
+  border-color: #38bdf8;
+  color: #0f172a;
+}
+
 .collection-card-image {
   height: 180px;
 }

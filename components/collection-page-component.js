@@ -10,11 +10,11 @@ export default {
   template: /* html */ `
     <section class="container py-4">
       <div class="d-flex justify-content-between align-items-center mb-3">
-        <h1 class="h3 mb-0">Collection</h1>
+        <h1 class="h3 mb-0">Build ideas</h1>
         <span class="badge text-bg-light border">{{ itemsStore.items.length }} shown</span>
       </div>
 
-      <p class="text-muted">Browse a simple dataset loaded from a CSV file.</p>
+      <p class="text-muted">Browse a simple set of beginner-friendly PC build ideas for different needs.</p>
 
       <div v-if="itemsStore.isLoading" class="alert alert-secondary" role="status">
         Loading items...
@@ -52,7 +52,7 @@ export default {
                 {{ item.description || 'No description available.' }}
               </p>
 
-              <p class="small mb-3"><strong>Location:</strong> {{ item.location || 'N/A' }}</p>
+              <p class="small mb-3"><strong>Best for:</strong> {{ item.location || 'N/A' }}</p>
 
               <div class="d-grid">
                 <router-link :to="'/items/' + item.id" class="btn btn-outline-secondary btn-sm">
