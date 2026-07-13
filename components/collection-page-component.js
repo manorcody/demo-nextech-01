@@ -28,9 +28,9 @@ export default {
         No items found in the dataset.
       </div>
 
-      <div v-else class="row g-3">
-        <div class="col-12 col-md-6 col-lg-4" v-for="item in itemsStore.items" :key="item.id">
-          <article class="card h-100 shadow-sm border-0">
+      <div v-else class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
+        <div class="col" v-for="item in itemsStore.items" :key="item.id">
+          <article class="card h-100 shadow-lg border-0">
             <img
               v-if="item.imageUrl"
               :src="item.imageUrl"
@@ -38,23 +38,26 @@ export default {
               class="card-img-top collection-card-image object-fit-cover" />
             <div
               v-else
-              class="collection-card-image d-flex align-items-center justify-content-center bg-light text-muted">
+              class="collection-card-image d-flex align-items-center justify-content-center text-muted">
               No image available
             </div>
 
             <div class="card-body d-flex flex-column">
               <div class="d-flex justify-content-between align-items-start mb-2">
-                <h2 class="h5 card-title mb-0">{{ item.name }}</h2>
-                <span class="badge text-bg-primary ms-2">{{ item.category || 'General' }}</span>
+                <div>
+                  <h2 class="h5 card-title mb-1">{{ item.name }}</h2>
+                  <p class="mb-1 small text-muted">{{ item.category || 'General' }}</p>
+                </div>
+                <span class="badge text-bg-primary ms-2">{{ item.price || 'Price not listed' }}</span>
               </div>
 
               <p class="card-text text-muted flex-grow-1 collection-description">
                 {{ item.description || 'No description available.' }}
               </p>
 
-              <p class="small mb-3"><strong>Best for:</strong> {{ item.location || 'N/A' }}</p>
+              <p class="small mb-3 text-muted"><strong>Best for:</strong> {{ item.location || 'N/A' }}</p>
 
-              <div class="d-grid">
+              <div class="d-grid mt-auto">
                 <router-link :to="'/items/' + item.id" class="btn btn-outline-secondary btn-sm">
                   View details
                 </router-link>

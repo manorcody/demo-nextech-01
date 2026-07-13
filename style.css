@@ -1,24 +1,50 @@
 body {
-  background: linear-gradient(135deg, #f8fafc 0%, #e2f0ff 100%);
+  min-height: 100vh;
+  background: radial-gradient(circle at top left, #081026 0%, #0b1220 45%, #06111e 100%);
+  color: #e2e8f0;
 }
 
 .navbar {
-  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+  background-color: rgba(8, 18, 38, 0.95);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
 }
 
 .hero-section {
-  background: linear-gradient(135deg, #0f172a 0%, #2563eb 100%);
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
   color: #ffffff;
 }
 
 .hero-section .btn-primary {
-  background-color: #38bdf8;
-  border-color: #38bdf8;
+  background-color: #60a5fa;
+  border-color: #60a5fa;
   color: #0f172a;
 }
 
+.card {
+  background-color: rgba(10, 18, 36, 0.95);
+  color: #e2e8f0;
+  border: 1px solid rgba(148, 163, 184, 0.15);
+}
+
+.card a,
+.card p,
+.card h2,
+.card h1,
+.card h3,
+.card h5,
+.card span,
+.card small {
+  color: #e2e8f0;
+}
+
 .collection-card-image {
-  height: 180px;
+  height: 220px;
+  background-color: #0f172a;
+}
+
+.collection-card-image.d-flex {
+  background-color: #0f172a;
+  color: #94a3b8;
 }
 
 .collection-description {
@@ -30,5 +56,32 @@ body {
 }
 
 .item-detail-image {
-  max-height: 320px;
+  max-height: 380px;
+  background-color: #0f172a;
+}
+
+.btn-outline-secondary {
+  color: #cbd5e1;
+  border-color: rgba(148, 163, 184, 0.25);
+}
+
+.btn-outline-secondary:hover {
+  color: #ffffff;
+  background-color: rgba(96, 165, 250, 0.12);
+  border-color: rgba(96, 165, 250, 0.4);
+}
+
+.navbar {
+  border-color: rgba(148, 163, 184, 0.12);
+}
+
+.btn-outline-light {
+  color: #e2e8f0;
+  border-color: rgba(226, 232, 240, 0.25);
+}
+
+.btn-outline-light:hover {
+  color: #ffffff;
+  background-color: rgba(226, 232, 240, 0.12);
+  border-color: rgba(226, 232, 240, 0.45);
 }

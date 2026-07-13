@@ -1,7 +1,15 @@
-id,name,description,category,image_url,location
-budget-gaming,Budget Gaming Build,A balanced starter PC for smooth 1080p gaming without overspending,Gaming,https://picsum.photos/seed/pc-budget/800/600,Best for students on a budget
-student-creator,Student Creator Setup,"A reliable build for homework, video calls, and light editing work",Creator,https://picsum.photos/seed/pc-creator/800/600,Best for school and streaming
-stream-ready,Stream Ready Build,A strong choice for gaming and streaming at the same time with a clean setup,Streaming,https://picsum.photos/seed/pc-stream/800/600,Best for casual creators
-compact-office,Compact Office PC,A quiet and space-saving build for everyday tasks and simple web use,Office,https://picsum.photos/seed/pc-office/800/600,Best for home office use
-upgrade-path,Upgrade Path Build,A flexible system with room to add better parts later as needs grow,Upgrade,https://picsum.photos/seed/pc-upgrade/800/600,Best for future upgrades
-mini-gaming,Mini Gaming Rig,A smaller build that still handles modern games well in a compact space,Gaming,https://picsum.photos/seed/pc-mini/800/600,Best for small rooms
+id,name,description,category,image_url,location,price
+budget-gaming,Neon Entry Gaming PC,"A lower-end neon RGB gaming PC with budget CPU, GTX GPU, RGB fans, and fast NVMe storage for casual 1080p play",Gaming,./images/images.jpg,Best for beginner gamers,$420
+student-stream,Student Stream Setup,"A polished LED desktop with Core i5, 16GB RAM, M.2 SSD, and a clean interior for school work and livestreaming",Creator,./images/pc-immage-3.png,Perfect for homework and livestreams,$532
+cyberpunk-rig,Cyberpunk LED Rig,"A colorful case with RTX graphics, liquid cooler, ATX motherboard, and RGB strips for a futuristic setup",Streaming,./images/pc-im.webp,Great for content creators,$748
+office-glow,Office Glow PC,"A quiet case with efficient PSU, SSD storage, subtle LED accents, and low-noise fans for the home office",Office,./images/pc-immm.webp,Best for home office use,$426
+upgrade-path,Upgrade Path Build,"A midrange LED rig with expandable motherboard, 32GB RAM, PCIe slots, and room for better cooling later",Upgrade,./images/pc-imn.1.jpg,Ideal for future upgrades,$653
+pro-gaming,Pro Gaming PC,"A high-performance LED gaming PC with RTX power, 1440p-ready GPU, Corsair cooler, and high-speed DDR5 memory",Gaming,./images/pc-image.webp,Best for high frame rate gaming,$1287
+mini-gaming,Mini LED Gaming Rig,"A small form factor PC with compact GPU, SFX PSU, 16GB RAM, and bright accent lighting for tiny desks",Gaming,./images/pc-imn.webp,Best for compact rooms,$984
+rtx-starter,RTX Starter Build,"An entry-level tower with RTX 3060, 1TB NVMe, dual RGB case fans, and a strong Intel Core i5 CPU",Gaming,./images/pc-placeholder.svg,Best for beginner 1440p players,$599
+creator-studio,Creator Studio PC,"A creator-friendly build with Ryzen 7, 32GB DDR4 RAM, 2TB SSD, USB-C front panel, and a quiet cooler",Creator,./images/pc-placeholder.svg,Great for video editing,$812
+vr-ready,VR Ready Rig,"A compact VR system with RTX 3070, fast storage, Wi-Fi 6 card, and vivid RGB lighting for immersive play",Gaming,./images/pc-placeholder.svg,Best for VR gaming,$955
+overclock-fury,Overclocked Fury PC,"A powerful overclocking-focused build with liquid cooling, high-end motherboard, 64GB RAM, and premium case fans",Gaming,./images/pc-placeholder.svg,Best for performance tuning,$1240
+silent-ryzen,Silent Ryzen Workstation,"A near-silent PC with Ryzen 9, passive-style fan setup, 1TB NVMe, and a sleek LED case for quiet productivity",Office,./images/pc-placeholder.svg,Best for quiet workspaces,$899
+rgb-stream,RGB Streaming Tower,"A streaming rig with Intel i7, capture card, programmable addressable RGB, 32GB RAM, and a fast SSD",Streaming,./images/pc-placeholder.svg,Great for live streamers,$1075
+liquid-frost,Liquid Frost Build,"A frosty white LED build with custom loop cooling, dual SSDs, premium power supply, and a crystal-clear tempered glass case",Gaming,./images/pc-placeholder.svg,Best for showcase desk

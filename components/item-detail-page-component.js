@@ -29,7 +29,7 @@ export default {
         Item not found.
       </div>
 
-      <article v-else class="card shadow-sm border-0 overflow-hidden">
+      <article v-else class="card shadow-sm border-0 overflow-hidden bg-dark">
         <img
           v-if="selectedItem.imageUrl"
           :src="selectedItem.imageUrl"
@@ -37,17 +37,18 @@ export default {
           class="item-detail-image w-100 object-fit-cover" />
         <div
           v-else
-          class="item-detail-image w-100 d-flex align-items-center justify-content-center bg-light text-muted">
+          class="item-detail-image w-100 d-flex align-items-center justify-content-center text-muted">
           No image available
         </div>
 
-        <div class="card-body p-4">
+        <div class="card-body p-4 text-light">
           <div class="d-flex align-items-center gap-2 mb-2">
             <h1 class="h3 mb-0">{{ selectedItem.name }}</h1>
-            <span class="badge text-bg-primary">{{ selectedItem.category || 'General' }}</span>
+            <span class="badge bg-primary">{{ selectedItem.category || 'General' }}</span>
           </div>
 
-          <p class="lead mb-3">{{ selectedItem.description || 'No description available.' }}</p>
+          <p class="lead mb-3 text-muted">{{ selectedItem.description || 'No description available.' }}</p>
+          <p class="mb-2"><strong>Price:</strong> {{ selectedItem.price || 'Price not listed' }}</p>
           <p class="mb-0"><strong>Best for:</strong> {{ selectedItem.location || 'N/A' }}</p>
           <p class="text-muted mt-2 mb-0"><strong>Build ID:</strong> {{ selectedItem.id }}</p>
         </div>
