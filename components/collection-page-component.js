@@ -2,9 +2,11 @@ export default {
   name: 'collection-page-component',
   setup() {
     const itemsStore = Vue.inject('itemsStore');
+    const cartStore = Vue.inject('cartStore');
 
     return {
       itemsStore,
+      cartStore,
     };
   },
   template: /* html */ `
@@ -14,7 +16,7 @@ export default {
         <span class="badge text-bg-light border">{{ itemsStore.items.length }} shown</span>
       </div>
 
-      <p class="text-muted">Browse a simple set of beginner-friendly PC build ideas for different needs.</p>
+      <p class="text-white">Browse a simple set of beginner-friendly PC build ideas for different needs.</p>
 
       <div v-if="itemsStore.isLoading" class="alert alert-secondary" role="status">
         Loading items...
@@ -28,8 +30,8 @@ export default {
         No items found in the dataset.
       </div>
 
-      <div v-else class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
-        <div class="col" v-for="item in itemsStore.items" :key="item.id">
+      <div v-else class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 collection-reveal">
+        <div class="col build-card-reveal" v-for="(item, index) in itemsStore.items" :key="item.id" :style="{ 'animation-delay': (0.12 * index) + 's' }">
           <article class="card h-100 shadow-lg border-0">
             <img
               v-if="item.imageUrl"
@@ -51,13 +53,16 @@ export default {
                 <span class="badge text-bg-primary ms-2">{{ item.price || 'Price not listed' }}</span>
               </div>
 
-              <p class="card-text text-muted flex-grow-1 collection-description">
+              <p class="card-text text-light flex-grow-1 collection-description">
                 {{ item.description || 'No description available.' }}
               </p>
 
               <p class="small mb-3 text-muted"><strong>Best for:</strong> {{ item.location || 'N/A' }}</p>
 
-              <div class="d-grid mt-auto">
+              <div class="d-grid gap-2 mt-auto">
+                <button type="button" class="btn btn-outline-light btn-sm" @click="cartStore.addItem(item)">
+                  <i class="bi bi-cart-plus me-1"></i>Add to cart
+                </button>
                 <router-link :to="'/items/' + item.id" class="btn btn-outline-secondary btn-sm">
                   View details
                 </router-link>

@@ -3,6 +3,8 @@ import AboutPageComponent from './components/about-page-component.js';
 import NavbarComponent from './components/navbar-component.js';
 import CollectionPageComponent from './components/collection-page-component.js';
 import ItemDetailPageComponent from './components/item-detail-page-component.js';
+import CartPageComponent from './components/cart-page-component.js';
+import InstructionsPageComponent from './components/instructions-page-component.js';
 
 const routes = [
   {
@@ -21,11 +23,29 @@ const routes = [
     path: '/items/:id',
     component: ItemDetailPageComponent,
   },
+  {
+    path: '/cart',
+    component: CartPageComponent,
+  },
+  {
+    path: '/instructions',
+    component: InstructionsPageComponent,
+  },
 ];
 
 const router = VueRouter.createRouter({
   history: VueRouter.createWebHashHistory(),
   routes,
+});
+
+const setBackgroundMode = (path) => {
+  const shouldShowBg = path !== '/cart';
+  document.body.classList.toggle('has-moving-bg', shouldShowBg);
+  document.body.classList.toggle('no-moving-bg', !shouldShowBg);
+};
+
+router.afterEach((to) => {
+  setBackgroundMode(to.path);
 });
 
 const app = Vue.createApp({
@@ -34,6 +54,24 @@ const app = Vue.createApp({
       items: [],
       isLoading: true,
       error: '',
+    });
+
+    const cartStore = Vue.reactive({
+      items: [],
+      addItem(item) {
+        const existingItem = this.items.find((cartItem) => cartItem.id === item.id);
+        if (existingItem) {
+          existingItem.quantity += 1;
+        } else {
+          this.items.push({ ...item, quantity: 1 });
+        }
+      },
+      removeItem(itemId) {
+        this.items = this.items.filter((item) => item.id !== itemId);
+      },
+      clearCart() {
+        this.items = [];
+      },
     });
 
     const fallbackCsvText = `id,name,description,category,image_url,location,price
@@ -46,14 +84,13 @@ pro-gaming,Pro Gaming PC,"A high-performance LED gaming PC with RTX graphics, 14
 mini-gaming,Mini LED Gaming Rig,"A small form factor PC with compact GPU, SFX PSU, 16GB RAM, M.2 SSD, and bright accent lighting for tiny desks",Gaming,./images/pc-placeholder.svg,Best for compact rooms,$984
 rtx-starter,RTX Starter Build,"An entry-level tower with RTX 3050, 1TB NVMe drive, dual-zone RGB fans, and a reliable air cooler for beginner gaming",Gaming,./images/pc-placeholder.svg,Best for starter gamers,$599
 creator-studio,Creator Studio PC,"A creator-friendly build with Ryzen 7, 32GB DDR4, 2TB SSD, USB-C front panel, and a quiet RGB case for editing",Creator,./images/pc-placeholder.svg,Great for video editing,$783
-vr-ready,VR Ready Rig,"A compact VR system with RTX 3070, fast storage, Wi-Fi 6 card, vivid RGB lighting, and enough power for immersive experiences",Gaming,./images/pc-placeholder.svg,Best for VR gaming,$935
-overclock-fury,Overclocked Fury PC,"A powerful tank with custom liquid cooling, high-end motherboard, 64GB RAM, dual SSDs, and premium case fans",Gaming,./images/pc-placeholder.svg,Best for performance tuning,$1299
-silent-ryzen,Silent Ryzen Workstation,"A near-silent PC with Ryzen 9, passive-style fan setup, 1TB NVMe SSD, RGB accent, and elegant LED lighting",Office,./images/pc-placeholder.svg,Best for quiet workspaces,$1120
-rgb-stream,RGB Streaming Tower,"A streaming rig with Intel i7, capture card, programmable addressable RGB, 32GB RAM, and a fast SSD for live content",Streaming,./images/pc-placeholder.svg,Great for live streamers,$860
-liquid-frost,Liquid Frost Build,"A frosty LED build with custom loop cooling, dual SSDs, premium PSU, tempered glass, and cool winter lighting",Gaming,./images/pc-placeholder.svg,Best for showcase desks,$1099
-ultimate-content,Ultimate Content PC,"A powerhouse workstation with dual monitor support, 64GB RAM, 4TB storage, RTX 4080, and a bright LED chassis",Creator,./images/pc-placeholder.svg,Best for serious content creators,$1425
-compact-creator,Compact Creator Desk PC,"A mini desk PC with mini ITX board, 32GB RAM, NVMe storage, ambient LED lighting, and strong productivity performance",Creator,./images/pc-placeholder.svg,Best for tight desks,$1575
-dual-gpu,Dual GPU Performance PC,"A performance monster with dual GPUs, liquid cooling, 128GB RAM, reinforced frame, and RGB lighting for heavy workloads",Gaming,./images/pc-placeholder.svg,Best for heavy gaming and rendering,$1899`;
+vr-ready,VR Ready Rig,"A compact VR system with RTX 3070, fast storage, Wi-Fi 6 card, vivid RGB lighting, and enough power for immersive experiences",Gaming,./images/pc-placeholder.svg,Best for VR gaming,$935`;
+
+    function parsePriceValue(price) {
+      const cleaned = String(price || '').trim().replace(/[^0-9.-]/g, '');
+      const numericValue = Number(cleaned);
+      return Number.isFinite(numericValue) ? numericValue : 0;
+    }
 
     function parseCsvText(csvText) {
       Papa.parse(csvText, {
@@ -71,7 +108,7 @@ dual-gpu,Dual GPU Performance PC,"A performance monster with dual GPUs, liquid c
               category: String(row.category || '').trim(),
               imageUrl: String(row.image_url || '').trim(),
               location: String(row.location || '').trim(),
-              price: String(row.price || '').trim(),
+              price: parsePriceValue(row.price),
             })).filter(item => item.id || item.name);
 
             if (salvaged.length > 0) {
@@ -90,7 +127,7 @@ dual-gpu,Dual GPU Performance PC,"A performance monster with dual GPUs, liquid c
               category: String(row.category || '').trim(),
               imageUrl: String(row.image_url || '').trim(),
               location: String(row.location || '').trim(),
-              price: String(row.price || '').trim(),
+              price: parsePriceValue(row.price),
             }));
             itemsStore.error = '';
           }
@@ -116,7 +153,12 @@ dual-gpu,Dual GPU Performance PC,"A performance monster with dual GPUs, liquid c
         parseCsvText(fallbackCsvText);
       });
 
+    Vue.onMounted(() => {
+      setBackgroundMode(router.currentRoute.value.path);
+    });
+
     Vue.provide('itemsStore', itemsStore);
+    Vue.provide('cartStore', cartStore);
 
     return {};
   },

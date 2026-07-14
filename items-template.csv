@@ -1,15 +1,10 @@
 id,name,description,category,image_url,location,price
-budget-gaming,Neon Entry Gaming PC,"A lower-end neon RGB gaming PC with budget CPU, GTX GPU, RGB fans, and fast NVMe storage for casual 1080p play",Gaming,./images/images.jpg,Best for beginner gamers,$420
-student-stream,Student Stream Setup,"A polished LED desktop with Core i5, 16GB RAM, M.2 SSD, and a clean interior for school work and livestreaming",Creator,./images/pc-immage-3.png,Perfect for homework and livestreams,$532
-cyberpunk-rig,Cyberpunk LED Rig,"A colorful case with RTX graphics, liquid cooler, ATX motherboard, and RGB strips for a futuristic setup",Streaming,./images/pc-im.webp,Great for content creators,$748
-office-glow,Office Glow PC,"A quiet case with efficient PSU, SSD storage, subtle LED accents, and low-noise fans for the home office",Office,./images/pc-immm.webp,Best for home office use,$426
-upgrade-path,Upgrade Path Build,"A midrange LED rig with expandable motherboard, 32GB RAM, PCIe slots, and room for better cooling later",Upgrade,./images/pc-imn.1.jpg,Ideal for future upgrades,$653
-pro-gaming,Pro Gaming PC,"A high-performance LED gaming PC with RTX power, 1440p-ready GPU, Corsair cooler, and high-speed DDR5 memory",Gaming,./images/pc-image.webp,Best for high frame rate gaming,$1287
-mini-gaming,Mini LED Gaming Rig,"A small form factor PC with compact GPU, SFX PSU, 16GB RAM, and bright accent lighting for tiny desks",Gaming,./images/pc-imn.webp,Best for compact rooms,$984
-rtx-starter,RTX Starter Build,"An entry-level tower with RTX 3060, 1TB NVMe, dual RGB case fans, and a strong Intel Core i5 CPU",Gaming,./images/pc-placeholder.svg,Best for beginner 1440p players,$599
-creator-studio,Creator Studio PC,"A creator-friendly build with Ryzen 7, 32GB DDR4 RAM, 2TB SSD, USB-C front panel, and a quiet cooler",Creator,./images/pc-placeholder.svg,Great for video editing,$812
-vr-ready,VR Ready Rig,"A compact VR system with RTX 3070, fast storage, Wi-Fi 6 card, and vivid RGB lighting for immersive play",Gaming,./images/pc-placeholder.svg,Best for VR gaming,$955
-overclock-fury,Overclocked Fury PC,"A powerful overclocking-focused build with liquid cooling, high-end motherboard, 64GB RAM, and premium case fans",Gaming,./images/pc-placeholder.svg,Best for performance tuning,$1240
-silent-ryzen,Silent Ryzen Workstation,"A near-silent PC with Ryzen 9, passive-style fan setup, 1TB NVMe, and a sleek LED case for quiet productivity",Office,./images/pc-placeholder.svg,Best for quiet workspaces,$899
-rgb-stream,RGB Streaming Tower,"A streaming rig with Intel i7, capture card, programmable addressable RGB, 32GB RAM, and a fast SSD",Streaming,./images/pc-placeholder.svg,Great for live streamers,$1075
-liquid-frost,Liquid Frost Build,"A frosty white LED build with custom loop cooling, dual SSDs, premium power supply, and a crystal-clear tempered glass case",Gaming,./images/pc-placeholder.svg,Best for showcase desk
+budget-gaming,Neon Entry Gaming PC,"CPU: budget Ryzen/Intel chip, GPU: entry-level graphics card, RAM: 8GB, storage: 500GB SSD.",Gaming,./images/images.jpg,Best for beginner gamers,$420
+student-stream,Student Stream Setup,"CPU: mid-range processor, GPU: integrated or light discrete graphics, RAM: 16GB, storage: 1TB SSD.",Creator,./images/pc-immage-3.png,Perfect for homework and livestreams,$532
+cyberpunk-rig,Cyberpunk LED Rig,"CPU: strong multi-core processor, GPU: RTX graphics card, RAM: 16GB, storage: 2TB SSD.",Streaming,./images/pc-im.webp,Great for content creators,$748
+office-glow,Office Glow PC,"CPU: efficient processor, GPU: basic graphics, RAM: 8GB, storage: 512GB SSD.",Office,./images/pc-immm.webp,Best for home office use,$426
+upgrade-path,Upgrade Path Build,"CPU: upgrade-friendly processor, GPU: mid-range graphics, RAM: 32GB, storage: 1TB SSD plus extra slot.",Upgrade,./images/pc-imn.1.jpg,Ideal for future upgrades,$653
+pro-gaming,Pro Gaming PC,"CPU: high-end processor, GPU: RTX 40-series graphics, RAM: 32GB, storage: 2TB NVMe SSD.",Gaming,./images/pc-image.webp,Best for high frame rate gaming,$1287
+mini-gaming,Mini LED Gaming Rig,"CPU: compact performance chip, GPU: small-form-factor graphics card, RAM: 16GB, storage: 1TB SSD.",Gaming,./images/pc-imn.webp,Best for compact rooms,$984
+rtx-starter,RTX Starter Build,"CPU: entry-level gaming processor, GPU: RTX 3050/3060 class card, RAM: 16GB, storage: 1TB SSD.",Gaming,./images/pc-1.jpg,Best for beginner 1440p players,$599
+creator-studio,Creator Studio PC,"CPU: strong creator processor, GPU: capable graphics card, RAM: 32GB, storage: 2TB SSD.",Creator,./images/pc-cody.1.jpg,Great for video editing,$812

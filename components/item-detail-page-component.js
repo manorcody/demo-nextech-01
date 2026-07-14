@@ -15,7 +15,7 @@ export default {
   },
   template: /* html */ `
     <section class="container py-4">
-      <router-link to="/items" class="btn btn-link ps-0 mb-3">← Back to build ideas</router-link>
+      <router-link to="/items" class="btn btn-link ps-0 mb-3 text-white text-decoration-none">← Back to build ideas</router-link>
 
       <div v-if="itemsStore.isLoading" class="alert alert-secondary" role="status">
         Loading item details...

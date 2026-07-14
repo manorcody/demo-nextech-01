@@ -1,9 +1,4 @@
-k
-
-
-\l
-
-!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -27,9 +22,43 @@ k
 
   <body class="bg-light">
     <div id="app" class="d-flex flex-column min-vh-100">
+      <div class="robot-float robot-float-1" aria-hidden="true">
+        <div class="robot-head"></div>
+        <div class="robot-body"></div>
+      </div>
+      <div class="robot-float robot-float-2" aria-hidden="true">
+        <div class="robot-head"></div>
+        <div class="robot-body"></div>
+      </div>
+      <div class="robot-float robot-float-3" aria-hidden="true">
+        <div class="robot-head"></div>
+        <div class="robot-body"></div>
+      </div>
+      <div class="robot-float robot-float-4" aria-hidden="true">
+        <div class="robot-head"></div>
+        <div class="robot-body"></div>
+      </div>
+      <div class="robot-float robot-float-5" aria-hidden="true">
+        <div class="robot-head"></div>
+        <div class="robot-body"></div>
+      </div>
+      <div class="robot-float robot-float-6" aria-hidden="true">
+        <div class="robot-head"></div>
+        <div class="robot-body"></div>
+      </div>
+      <div class="tech-spark tech-spark-1" aria-hidden="true"></div>
+      <div class="tech-spark tech-spark-2" aria-hidden="true"></div>
+      <div class="tech-spark tech-spark-3" aria-hidden="true"></div>
+      <div class="tech-spark tech-spark-4" aria-hidden="true"></div>
+      <div class="tech-spark tech-spark-5" aria-hidden="true"></div>
+      <div class="circuit-line circuit-line-1" aria-hidden="true"></div>
+      <div class="circuit-line circuit-line-2" aria-hidden="true"></div>
+      <div class="circuit-line circuit-line-3" aria-hidden="true"></div>
       <navbar-component></navbar-component>
       <main class="flex-grow-1 overflow-auto">
-        <router-view></router-view>
+        <div class="router-view-shell">
+          <router-view></router-view>
+        </div>
       </main>
     </div>
 
